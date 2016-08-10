@@ -2,12 +2,19 @@ $(document).ready(function() {
 
 	// First screen full height
 	function setHeiHeight() {
+        var wh = $(window).height();
 	    $('body').css({
 	        minHeight: $(window).height() + 'px'
 	    });
-	    $('.baron').css({
-	        height: $(window).height()*0.4 + 'px' 
-	    });
+        if (wh >= 900) {
+            $('.baron').css({
+                height: $(window).height()*0.47 + 'px' 
+            });
+        } else {
+            $('.baron').css({
+                height: $(window).height()*0.4 + 'px' 
+            });
+        }
 	}
 	setHeiHeight(); // устанавливаем высоту окна при первой загрузке страницы
 	$(window).resize( setHeiHeight ); // обновляем при изменении размеров окна
