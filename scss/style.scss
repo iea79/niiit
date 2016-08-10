@@ -695,6 +695,9 @@ body {
 		line-height: 31px;
 		white-space: nowrap;
 	}
+	footer .copy {
+		font-size: 14px;
+	}
 }
 @media (max-width: 695px) {
 	.modal__nav__li {
@@ -712,6 +715,13 @@ body {
 	.modal__nav__li {
 		.navbar__txt {font-size: 15px;}
 	}
+	.modal__content__center {
+		padding-left: 10px;
+		padding-right: 15px;
+	}
+	.baron._scrollbar .baron__track {
+		right: 6px;
+	}
 }
 
 @media (max-width: 450px) {
@@ -725,7 +735,6 @@ body {
 
 @media (max-width: 370px) {
 	.modal__nav__li {
-		width: 80vw;
 	}
 }
 @media (max-width: 350px) {
@@ -820,5 +829,10 @@ footer {
 @media (max-width: 1290px) {
 	footer .copy {
 		margin-left: 26px;
+	}
+}
+@media (max-width: 740px) {
+	footer .copy {
+		font-size: 14px;
 	}
 }
