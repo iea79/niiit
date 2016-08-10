@@ -5,6 +5,9 @@ $(document).ready(function() {
 	    $('body').css({
 	        minHeight: $(window).height() + 'px'
 	    });
+	    $('.baron').css({
+	        height: $(window).height()/2.2 + 'px' 
+	    });
 	}
 	setHeiHeight(); // устанавливаем высоту окна при первой загрузке страницы
 	$(window).resize( setHeiHeight ); // обновляем при изменении размеров окна
