@@ -15,25 +15,49 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
-	// Scroll to ID // Плавный скролл к элементу при нажатии на ссылку. В ссылке указываем ID элемента
-	// $('#main__menu a[href^="#"]').click( function(){ 
-	// 	var scroll_el = $(this).attr('href'); 
-	// 	if ($(scroll_el).length != 0) {
-	// 	$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-	// 	}
-	// 	return false;
-	// });
 
-	// Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
-    // $(document).ready(function(){
-    //     var HeaderTop = $('#header').offset().top;
-        
-    //     $(window).scroll(function(){
-    //             if( $(window).scrollTop() > HeaderTop ) {
-    //                     $('#header').addClass('stiky');
-    //             } else {
-    //                     $('#header').removeClass('stiky');
-    //             }
-    //     });
-    // });
+	// Mobile menu
+	var touch = $('#touchmenu');
+    var menu = $('.navbar');
+ 
+    $(touch).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
+    $(window).resize(function(){
+        var wid = $(window).width();
+        if(wid > 760 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+
+    // Scroller
+	baron({
+        root: '.baron',
+        scroller: '.baron__scroller',
+        bar: '.baron__bar',
+	}).controls({
+        // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
+        track: '.baron__track',
+    });
+
+    // Open modal window
+    $('.preload_after').hide();
+
+    setTimeout(function() {
+    	$('.modal__window').addClass('open');
+    	$('.preload_befor').hide();
+    }, 3000);
+    
+    $('.modal__window').on('click', '.close', function(event) {
+    	event.preventDefault();
+
+		$('.modal__window').removeClass('open');
+		$('.preload_after').show();
+    	setTimeout(function() {
+			$('.preload_after').hide();
+    	}, 3000);
+    });
+
+
 });
