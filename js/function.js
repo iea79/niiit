@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	// First screen full height
 	function setHeiHeight() {
-	    $('.full__height').css({
+	    $('body').css({
 	        minHeight: $(window).height() + 'px'
 	    });
 	}

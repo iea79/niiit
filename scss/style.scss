@@ -593,6 +593,9 @@ body {
 			display: block;
 			cursor: pointer;
 			right: 15px;
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 	}
 	.modal__content {
@@ -751,9 +754,13 @@ body {
     right: 0;    
     z-index: 1;
     width: 12px;
-    height: 12px;
+    height: 12px !important;
     background:#86bc42;
     border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+    	opacity: .8;
+    }
 }
 .baron._scrollbar .baron__bar {
     display: block;

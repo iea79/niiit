@@ -94,7 +94,7 @@
 					</div>
 					<div class="modal__content">
 						<div class="modal__content__top"></div>
-						<div class="baron baron__root baron__clipper _MODIFIER">
+						<div class="baron baron__root baron__clipper">
 						    <div class="baron__scroller">
 						        <div class="modal__content__center">
 									<img src="img/img1.jpg" alt="img" class="img1">
@@ -167,7 +167,14 @@
 	});
 </script>
 <script>
-	$('.baron').baron();
+	baron({
+        root: '.baron',
+        scroller: '.baron__scroller',
+        bar: '.baron__bar',
+	}).controls({
+        // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
+        track: '.baron__track',
+    });
 </script>
 
 </body>
